@@ -144,7 +144,6 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
-TARGET_NO_RPC := true
 
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := sdfat
