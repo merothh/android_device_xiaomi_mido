@@ -1,0 +1,1 @@
+allow qti sysfs_kgsl:file { open read };
