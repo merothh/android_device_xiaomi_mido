@@ -5,8 +5,8 @@ type hal_fingerprint_mido_exec, exec_type, vendor_file_type, file_type;
 binder_use(hal_fingerprint_mido)
 init_daemon_domain(hal_fingerprint_mido)
 
-allow hal_fingerprint_mido fingerprintd_data_file:file getattr;
-allow hal_fingerprint_mido fingerprintd_data_file:dir write;
+allow hal_fingerprint_mido fingerprintd_data_file:file { getattr rename unlink };
+allow hal_fingerprint_mido fingerprintd_data_file:dir { write add_name remove_name };
 allow hal_fingerprint_mido fingerprint_service:service_manager find;
 allow hal_fingerprint_mido fpc_data_file:dir rw_dir_perms;
 allow hal_fingerprint_mido fpc_data_file:sock_file create_file_perms;
@@ -14,6 +14,7 @@ allow hal_fingerprint_mido fpc_sysfs:dir rw_dir_perms;
 allow hal_fingerprint_mido fpc_sysfs:file rw_file_perms;
 allow hal_fingerprint_mido gx_fpd:binder { transfer call };
 allow hal_fingerprint_mido gx_fpd_service:service_manager find;
+allow hal_fingerprint_mido media_rw_data_file:dir { open read search };
 allow hal_fingerprint_mido mnt_user_file:dir search;
 allow hal_fingerprint_mido mnt_user_file:lnk_file read;
 allow hal_fingerprint_mido sdcardfs:dir search;
