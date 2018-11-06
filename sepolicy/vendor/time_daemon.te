@@ -1,1 +1,2 @@
 allow time_daemon sysfs_kgsl:file { open read };
+allow time_daemon time_data_file:file { open read };
