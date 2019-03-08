@@ -22,6 +22,7 @@ INITIAL_COPYRIGHT_YEAR=2017
 
 # Required!
 export DEVICE=mido
+export DEVICE_COMMON=msm8953-common
 export VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
@@ -51,7 +52,6 @@ write_footers
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     # Reinitialize the helper for device
-    INITIAL_COPYRIGHT_YEAR="$DEVICE_BRINGUP_YEAR"
     setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false
 
     # Copyright headers and guards
